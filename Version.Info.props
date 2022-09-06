@@ -1,0 +1,13 @@
+<Project>
+
+  <PropertyGroup>
+    <NetCoreAppCurrentVersion>7.0</NetCoreAppCurrentVersion>
+    <NetCoreAppMinimum>net6.0</NetCoreAppMinimum>
+    <NetCoreAppToolCurrentVersion>7.0</NetCoreAppToolCurrentVersion>
+    <NetCoreAppLatestStableVersion>6.0</NetCoreAppLatestStableVersion>
+    <AspNetCoreAppCurrentVersion>7.0</AspNetCoreAppCurrentVersion>
+    <NetFrameworkMinimum>net462</NetFrameworkMinimum>
+    <NetFrameworkToolCurrent>net472</NetFrameworkToolCurrent>
+  </PropertyGroup>
+
+</Project>
