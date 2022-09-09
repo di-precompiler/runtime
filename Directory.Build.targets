@@ -1,0 +1,27 @@
+<Project>
+
+  <ItemGroup>
+    <SupportedNETCoreAppTargetFramework Include=".NETCoreApp,Version=v$(NETCoreAppMaximumVersion)" DisplayName=".NET $(NETCoreAppMaximumVersion)" Alias="net$(NETCoreAppMaximumVersion)" />
+  </ItemGroup>
+
+  <!-- The Default behavior in VS is to show files for the first target framework in TargetFrameworks property.
+       This is required to show all the files corresponding to all target frameworks in VS. -->
+  <ItemGroup Condition="'$(DefaultLanguageSourceExtension)' != '' and
+                        ('$(BuildingInsideVisualStudio)' == 'true' or '$(DesignTimeBuild)' == 'true')">
+    <None Include="$(MSBuildProjectDirectory)\**\*$(DefaultLanguageSourceExtension)"
+          Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder);@(Compile)" />
+  </ItemGroup>
+
+  <!-- Packaging -->
+  <ItemGroup Condition="'$(IsPackable)' == 'true'">
+    <!-- The sfxproj files add the license themselves. -->
+    <None Include="$(LicenseFile)"
+          PackagePath="$([System.IO.Path]::GetFileName('$(LicenseFile)'))"
+          Pack="true"
+          Condition="'$(MSBuildProjectExtension)' != '.sfxproj' and '$(MSBuildProjectFile)' != 'msi.csproj'" />
+    <None Include="$(PackageThirdPartyNoticesFile)"
+          PackagePath="$([System.IO.Path]::GetFileName('$(PackageThirdPartyNoticesFile)'))"
+          Pack="true" />
+  </ItemGroup>
+
+</Project>

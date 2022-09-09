@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1</TargetFrameworks>
+    <!--<TargetFrameworks>netstandard2.1;netstandard2.0</TargetFrameworks>-->
+    <EnableDefaultItems>true</EnableDefaultItems>
+    <IsPackable>true</IsPackable>
+    <EnableAOTAnalyzer>true</EnableAOTAnalyzer>
+    <PackageDescription>Abstractions for dependency injection.</PackageDescription>
+  </PropertyGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo $(BaseOutputPath)" />
+    <Exec Command="echo $(OutputPath)" />
+    <Exec Command="echo $(OutDir)" />
+    <Exec Command="echo ---------" />
+    <Exec Command="echo $(BaseIntermediateOutputPath)" />
+    <Exec Command="echo $(IntermediateOutputPath)" />
+    <Exec Command="echo $(IntDir)" />
+    <Exec Command="echo ---------" />
+
+  </Target>
+
+</Project>
