@@ -1,7 +1,18 @@
 <Project>
+
   <!-- Import the Arcade SDK -->
   <Import Project="Sdk.props" Sdk="Microsoft.DotNet.Arcade.Sdk" />
 
+  <PropertyGroup>
+  
+    <VersionPrefix>0.0.0</VersionPrefix>
+
+    <LibTargetFrameworks>netstandard2.1;net462</LibTargetFrameworks>
+    <TestsTargetFrameworks>net462</TestsTargetFrameworks>
+
+  </PropertyGroup>
+
+  <!-- Package Info -->
   <PropertyGroup>
 
     <GitHubOrhanizationName>ioc-dot-net</GitHubOrhanizationName>
@@ -25,8 +36,27 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <!-- default to allowing all language features -->
+    <LangVersion>preview</LangVersion>
+    <AnalysisLevel>preview</AnalysisLevel>
+
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+
+
+    <RestoreUseStaticGraphEvaluation>true</RestoreUseStaticGraphEvaluation>
+    <GenerateRestoreUseStaticGraphEvaluationBinlog>true</GenerateRestoreUseStaticGraphEvaluationBinlog>
+
+    <!-- Disable source link when building locally. -->
+    <DisableSourceLink Condition="'$(DisableSourceLink)' == '' and
+                                  '$(ContinuousIntegrationBuild)' != 'true' and
+                                  '$(OfficialBuildId)' == ''">true</DisableSourceLink>
+
+
+    <ErrorReport>none</ErrorReport>
     <!-- TODO: remove when fixed in .NET -->
     <RuntimeIdGraphDefinitionFile>$([MSBuild]::NormalizePath('$(MSBuildThisFileDirectory)', 'eng', 'runtime.json'))</RuntimeIdGraphDefinitionFile>
+
   </PropertyGroup>
 
 </Project>

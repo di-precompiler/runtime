@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    
+    <Title>Dependency Injection Abstractions</Title>
+    <PackageDescription>Abstractions for dependency injection.</PackageDescription>
+   
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+
+    <IsPackable>true</IsPackable>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>$(LibTargetFrameworks)</TargetFrameworks>
+  </PropertyGroup>
+
+</Project>
