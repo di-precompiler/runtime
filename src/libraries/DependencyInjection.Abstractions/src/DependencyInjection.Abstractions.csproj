@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.1</TargetFrameworks>
-    <!--<TargetFrameworks>netstandard2.1;netstandard2.0</TargetFrameworks>-->
+    <TargetFramework>netstandard2.1</TargetFramework>
     <EnableDefaultItems>true</EnableDefaultItems>
     <IsPackable>true</IsPackable>
     <EnableAOTAnalyzer>true</EnableAOTAnalyzer>
@@ -23,5 +22,17 @@
     <Exec Command="echo ---------" />
 
   </Target>
+
+  <ItemGroup>
+    <None Remove="msbuild.binlog" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="P:\IoC\runtime\LICENSE.TXT" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="P:\IoC\runtime\THIRD-PARTY-NOTICES.TXT" />
+  </ItemGroup>
 
 </Project>

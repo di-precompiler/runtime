@@ -1,0 +1,25 @@
+<Project>
+
+  <!--
+    This file defines the list of projects to build and divides them into subsets. In ordinary
+    situations, you should perform a full build by running 'build.cmd' or './build.sh'. This ensures
+    the projects are sequenced correctly so the outputs and test results are what you would expect.
+
+    Examples:
+
+      ./build.sh host.native
+
+        This builds only the .NET host.
+
+      ./build.sh libs+host.native
+
+        This builds the .NET host and also the manged libraries portion.
+        A space ' ' or '+' are the delimiters between multiple subsets to build.
+
+      ./build.sh -test host.tests
+
+        This builds and executes the installer test projects. (The '-test' argument is an Arcade SDK argument
+        that indicates tests should be run. Otherwise, they'll only be built.)
+  -->
+
+</Project>

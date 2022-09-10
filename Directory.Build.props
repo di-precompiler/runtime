@@ -42,6 +42,8 @@
     <Platform Condition="'$(Platform)' == '' and '$(InferPlatformFromTargetArchitecture)' == 'true'">$(TargetArchitecture)</Platform>
   </PropertyGroup>
 
+  <!-- Import the Arcade SDK -->
+  <Import Project="Sdk.props" Sdk="Microsoft.DotNet.Arcade.Sdk" />
 
   <!-- The TFMs to build and test against. -->
   <PropertyGroup>
@@ -127,6 +129,7 @@
     <!-- There's no checked configuration on Mono. -->
     <MonoConfiguration Condition="'$(MonoConfiguration)' == '' and '$(RuntimeConfiguration.ToLower())' == 'checked'">Debug</MonoConfiguration>
     <LibrariesConfiguration Condition="'$(LibrariesConfiguration)' == ''">$(Configuration)</LibrariesConfiguration>
+    <HostConfiguration Condition="'$(HostConfiguration)' == ''">$(Configuration)</HostConfiguration>
   </PropertyGroup>
 
   <PropertyGroup Label="CalculateOS">
@@ -229,7 +232,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <DotNetHostBinDir>$([MSBuild]::NormalizeDirectory('$(ArtifactsBinDir)', '$(OutputRid).$(Configuration)', 'corehost'))</DotNetHostBinDir>
+    <DotNetHostBinDir>$([MSBuild]::NormalizeDirectory('$(ArtifactsBinDir)', '$(OutputRid).$(HostConfiguration)', 'corehost'))</DotNetHostBinDir>
   </PropertyGroup>
 
   <!--Feature switches -->
@@ -246,6 +249,11 @@
                                   '$(ContinuousIntegrationBuild)' != 'true' and
                                   '$(OfficialBuildId)' == ''">true</DisableSourceLink>
   </PropertyGroup>
+
+  <!-- RepositoryEngineeringDir isn't set when Installer tests import this file. -->
+  <Import Project="$(RepositoryEngineeringDir)native\naming.props" />
+  <Import Project="$(RepositoryEngineeringDir)Subsets.props" />
+  <Import Project="$(RepositoryEngineeringDir)Analyzers.props" />
 
   <PropertyGroup>
     <CoreLibSharedDir>$([MSBuild]::NormalizeDirectory('$(LibrariesProjectRoot)', 'System.Private.CoreLib', 'src'))</CoreLibSharedDir>
