@@ -1,13 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>$(NetCoreAppCurrent);$(NetFrameworkCurrent)</TargetFrameworks>
+    <TargetFrameworks>$(NetCoreAppCurrent);$(NetFrameworkMinimum)</TargetFrameworks>
     <EnableDefaultItems>true</EnableDefaultItems>
-    <IncludeRemoteExecutor>true</IncludeRemoteExecutor>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\IoC.Abstractions.csproj" />
+    <ProjectReference Include="..\src\DependencyInjection.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>
