@@ -7,16 +7,21 @@
     <GitHubOrhanizationName>ioc-dot-net</GitHubOrhanizationName>
     <GitHubRepositoryName>runtime</GitHubRepositoryName>
     <Product>Dependency Injection Precompiler</Product>
+    <Owners>ENikS</Owners>
 
     <PackageLicenseExpression>MIT</PackageLicenseExpression> <!-- TDOD: Change -->
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <LicenseFile>$([MSBuild]::NormalizePath('$(MSBuildThisFileDirectory)', 'LICENSE.TXT'))</LicenseFile>
     <PackageThirdPartyNoticesFile>$([MSBuild]::NormalizePath('$(MSBuildThisFileDirectory)', 'THIRD-PARTY-NOTICES.TXT'))</PackageThirdPartyNoticesFile>
+    <RepositoryUrl>https://github.com/$(GitHubOrhanizationName)/$(GitHubRepositoryName)</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/$(GitHubOrhanizationName)/tree/main/src/libraries/$(MSBuildProjectName)</PackageProjectUrl>
 
-    <Copyright>ENikS</Copyright>
-    <Authors>ENikS</Authors>
-    <Owners>ENikS</Owners>
-    
+
+    <Authors>$(Owners)</Authors>
+    <Company>$(Owners)</Company>
+    <Copyright>$(Owners)</Copyright>
+    <CopyrightMicrosoft>$(Owners)</CopyrightMicrosoft>
+
   </PropertyGroup>
 
   <PropertyGroup>

@@ -30,8 +30,6 @@
     <IncludeSymbols>true</IncludeSymbols>
 
 
-    <RepositoryUrl>https://github.com/$(GitHubOrhanizationName)/$(GitHubRepositoryName)</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/$(GitHubOrhanizationName)/tree/main/src/libraries/$(MSBuildProjectName)</PackageProjectUrl>
 
 
     <!-- Always pass portable to override arcade sdk which uses embedded for local builds -->
