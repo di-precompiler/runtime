@@ -8,31 +8,5 @@
     <PackageDescription>Abstractions for dependency injection.</PackageDescription>
   </PropertyGroup>
 
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-  </Target>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="echo $(BaseOutputPath)" />
-    <Exec Command="echo $(OutputPath)" />
-    <Exec Command="echo $(OutDir)" />
-    <Exec Command="echo ---------" />
-    <Exec Command="echo $(BaseIntermediateOutputPath)" />
-    <Exec Command="echo $(IntermediateOutputPath)" />
-    <Exec Command="echo $(IntDir)" />
-    <Exec Command="echo ---------" />
-
-  </Target>
-
-  <ItemGroup>
-    <None Remove="msbuild.binlog" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="P:\IoC\runtime\LICENSE.TXT" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="P:\IoC\runtime\THIRD-PARTY-NOTICES.TXT" />
-  </ItemGroup>
 
 </Project>
