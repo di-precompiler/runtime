@@ -30,7 +30,7 @@
     <LicenseFile>$([MSBuild]::NormalizePath('$(MSBuildThisFileDirectory)', 'LICENSE.TXT'))</LicenseFile>
     <PackageThirdPartyNoticesFile>$([MSBuild]::NormalizePath('$(MSBuildThisFileDirectory)', 'THIRD-PARTY-NOTICES.TXT'))</PackageThirdPartyNoticesFile>
     <RepositoryUrl>https://github.com/$(GitHubOrhanizationName)/$(GitHubRepositoryName)</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/$(GitHubOrhanizationName)/tree/main/src/libraries/$(MSBuildProjectName)</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/$(GitHubOrhanizationName)/$(GitHubRepositoryName)/tree/main/src/libraries/$(MSBuildProjectName)</PackageProjectUrl>
 
     <ApplicationIcon>$([MSBuild]::NormalizePath('$(MSBuildThisFileDirectory)', 'src', 'resources', 'package.ico'))</ApplicationIcon>
   
