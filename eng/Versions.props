@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <!-- The product branding version -->
+    <VersionPrefix>0.0.0</VersionPrefix>
+
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- Libraries dependencies -->
+    <SystemComponentModelAnnotationsVersion>5.0.0</SystemComponentModelAnnotationsVersion>
+    <!-- Testing -->
+  </PropertyGroup>
+</Project>

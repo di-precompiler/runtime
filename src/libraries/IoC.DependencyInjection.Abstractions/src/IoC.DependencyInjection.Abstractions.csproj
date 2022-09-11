@@ -3,6 +3,7 @@
   <PropertyGroup>
     
     <Title>Dependency Injection Abstractions</Title>
+    <Description>Description for UI display</Description>
     <PackageDescription>Abstractions for dependency injection.</PackageDescription>
    
   </PropertyGroup>
