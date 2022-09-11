@@ -15,10 +15,10 @@
 
   
     <!-- Package Info -->
+
     <GitHubOrhanizationName>ioc-dot-net</GitHubOrhanizationName>
     <GitHubRepositoryName>runtime</GitHubRepositoryName>
     <Product>Dependency Injection Precompiler</Product>
-
     <Owners>ENikS</Owners>
     <Authors>$(Owners)</Authors>
     <Company>$(Owners)</Company>
@@ -32,6 +32,7 @@
     <RepositoryUrl>https://github.com/$(GitHubOrhanizationName)/$(GitHubRepositoryName)</RepositoryUrl>
     <PackageProjectUrl>https://github.com/$(GitHubOrhanizationName)/tree/main/src/libraries/$(MSBuildProjectName)</PackageProjectUrl>
 
+    <ApplicationIcon>$([MSBuild]::NormalizePath('$(MSBuildThisFileDirectory)', 'src', 'resources', 'package.ico'))</ApplicationIcon>
   
     <!-- language features -->
     <LangVersion>preview</LangVersion>
