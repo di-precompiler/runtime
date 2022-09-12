@@ -31,8 +31,8 @@ jobs:
       env:
         Configuration: 'Release'
       run: |
-      nuget restore
-      msbuild /bl
+        nuget restore
+        msbuild /bl
 
     # - name: Publish Local Package
     #   run: |
