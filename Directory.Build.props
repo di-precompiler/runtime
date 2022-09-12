@@ -29,7 +29,7 @@
     <RepositoryUrl>https://github.com/$(GitHubOrhanizationName)/$(GitHubRepositoryName)</RepositoryUrl>
     <PackageProjectUrl>https://github.com/$(GitHubOrhanizationName)/$(GitHubRepositoryName)/tree/main/src/libraries/$(MSBuildProjectName)</PackageProjectUrl>
 
-    <PackageIcon>$([MSBuild]::NormalizePath('$(RepoRoot)', 'src', 'resources', 'package.png'))</PackageIcon>
+    <!-- <PackageIcon>$([MSBuild]::NormalizePath('$(RepoRoot)', 'src', 'resources', 'package.png'))</PackageIcon> -->
     <PackageReadmeFile>$([MSBuild]::NormalizePath('$(MSBuildThisFileDirectory)', 'src', 'libraries', $(MSBuildProjectName), 'README.md'))</PackageReadmeFile>
     <ApplicationIcon>$([MSBuild]::NormalizePath('$(MSBuildThisFileDirectory)', 'src', 'resources', 'package.ico'))</ApplicationIcon>
 
