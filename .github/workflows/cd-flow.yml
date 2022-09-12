@@ -21,9 +21,6 @@ jobs:
     - name: Install .NET SDK
       uses: actions/setup-dotnet@v1
 
-    - name: Label Fixed Issues
-      uses: gh-bot/fix-labeler@master        
-
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.1
 
@@ -31,8 +28,10 @@ jobs:
       env:
         Configuration: 'Release'
       run: |
-        nuget restore
         msbuild -v:m /bl
+
+    - name: Label Fixed Issues
+      uses: gh-bot/fix-labeler@master        
 
     # - name: Publish Local Package
     #   run: |
