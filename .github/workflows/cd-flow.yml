@@ -32,7 +32,7 @@ jobs:
         Configuration: 'Release'
       run: |
         nuget restore
-        msbuild /bl
+        msbuild -v:m /bl
 
     # - name: Publish Local Package
     #   run: |
