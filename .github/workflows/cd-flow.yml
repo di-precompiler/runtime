@@ -21,10 +21,10 @@ jobs:
     - name: Install .NET SDK
       uses: actions/setup-dotnet@v1
 
-    - name: Restore
-      run: dotnet restore
+    # - name: Restore
+    #   run: dotnet restore
 
-    - name: Build app for release
+    - name: Build
       env:
         Configuration: 'Release'
       run: dotnet build  -v:m /bl
