@@ -25,8 +25,7 @@ jobs:
       env:
         Configuration: 'Release'
       run: | 
-        dotnet restore
-        dotnet build
+        msbuild
   
     # - name: Publish Local Package
     #   run: |
