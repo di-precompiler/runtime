@@ -21,11 +21,11 @@ jobs:
     - name: Label Fixed Issues
       uses: gh-bot/fix-labeler@master        
 
-    - name: Build
-      env:
-        Configuration: 'Release'
-      run: | 
-        dotnet build
+    # - name: Build
+    #   env:
+    #     Configuration: 'Release'
+    #   run: | 
+    #     dotnet build
   
     # - name: Publish Local Package
     #   run: |
