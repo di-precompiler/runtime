@@ -21,27 +21,13 @@ jobs:
     - name: Install .NET SDK
       uses: actions/setup-dotnet@v1
 
-    # - name: Add msbuild to PATH
-    #   uses: microsoft/setup-msbuild@v1.1
+    - name: Restore
+      run: dotnet restore
 
     - name: Build app for release
       env:
         Configuration: 'Release'
-      run: |
-        dotnet restore
-        dotnet build  -v:m /bl
+      run: dotnet build  -v:m /bl
 
     - name: Label Fixed Issues
       uses: gh-bot/fix-labeler@master        
-
-    # - name: Publish Local Package
-    #   run: |
-    #     dotnet nuget add source "https://nuget.pkg.github.com/unitycontainer/index.json" -n github -u unitycontainer -p ${{secrets.GITHUB_TOKEN}} --store-password-in-clear-text
-    #     dotnet nuget push '${{ env.PackageOutputPath }}\*' --source github --api-key ${{secrets.WORKFLOW_PAT}}
-
-    # - uses: actions/delete-package-versions@v1
-    #   name: Remove old packages
-    #   with:
-    #     package-name: ${{ env.PackageName }}
-    #     num-old-versions-to-delete: 1
-    #     token: ${{ secrets.WORKFLOW_PAT }}
