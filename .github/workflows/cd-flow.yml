@@ -30,7 +30,9 @@ jobs:
     - name: Build app for release
       env:
         Configuration: 'Release'
-      run: msbuild /bl
+      run: |
+      nuget restore
+      msbuild /bl
 
     # - name: Publish Local Package
     #   run: |
