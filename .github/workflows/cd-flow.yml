@@ -14,18 +14,18 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0
 
     - name: Label Fixed Issues
       uses: gh-bot/fix-labeler@master        
 
-    # - name: Build
-    #   env:
-    #     Configuration: 'Release'
-    #   run: | 
-    #     dotnet build
+    - name: Build
+      env:
+        Configuration: 'Release'
+      run: | 
+        dotnet build
   
     # - name: Publish Local Package
     #   run: |
