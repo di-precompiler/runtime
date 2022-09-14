@@ -18,7 +18,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Install .NET SDK
+    - name: Setup .NET
       uses: actions/setup-dotnet@v1
 
     # - name: Restore
@@ -27,7 +27,7 @@ jobs:
     - name: Build
       env:
         Configuration: 'Release'
-      run: dotnet build  -v:m /bl
+      run: dotnet build  -v:m 
 
     - name: Label Fixed Issues
       uses: gh-bot/fix-labeler@master        
