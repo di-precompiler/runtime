@@ -21,8 +21,14 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
 
-    # - name: Restore
-    #   run: dotnet restore
+    - name: Retrieve the certificate
+      run: |
+        echo "$CERTIFICATE_BASE64" > ioc-dot-net.base64
+        certutil -decode ioc-dot-net.base64 ioc-dot-net.snk
+      shell: bash
+      env:
+        CERTIFICATE_BASE64: ${{secrets.CERTIFICATE_BASE64}}
+
 
     - name: Build
       env:
@@ -31,15 +37,7 @@ jobs:
         dotnet build  -v:m 
 
 
-    - name: Retrieve the certificate
-      env:
-        CERTIFICATE_BASE64: ${{ secrets.CERTIFICATE_BASE64 }}
-      run: |
-        echo $CERTIFICATE_BASE64 | base64 --decode > ioc-dot-net.snk
+    # - name: Label Fixed Issues
+    #   uses: gh-bot/fix-labeler@master        
 
-    - name: Show certificate information
-      run: |
-        openssl x509 -in ioc-dot-net.snk -inform snk -text -noout
 
-    - name: Label Fixed Issues
-      uses: gh-bot/fix-labeler@master        
