@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\IoC.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\src\IoC.Net.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>
