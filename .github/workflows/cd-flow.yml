@@ -23,8 +23,7 @@ jobs:
 
     - name: Retrieve the certificate
       run: |
-        echo "$CERTIFICATE_BASE64" > ioc-dot-net.base64
-        certutil -decode ioc-dot-net.base64 ioc-dot-net.snk
+        echo $CERTIFICATE_BASE64 | base64 -d > ioc-dot-net.snk
       shell: bash
       env:
         CERTIFICATE_BASE64: ${{secrets.CERTIFICATE_BASE64}}
