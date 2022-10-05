@@ -18,9 +18,14 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFrameworks>$(LibTargetFrameworks)</TargetFrameworks>
     <PackageIcon>package.png</PackageIcon>
+    <TargetFrameworks>$(LibraryTargetFrameworks)</TargetFrameworks>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\IoC.Net.Abstractions\src\IoC.Net.Abstractions.csproj" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <None Include="..\..\..\resources\package.png">

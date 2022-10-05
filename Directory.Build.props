@@ -17,6 +17,7 @@
   <!-- Test Frameworks -->
 
   <PropertyGroup>
+    <LibraryTargetFrameworks>net7.0</LibraryTargetFrameworks>
     <TestTargetFrameworks>net7.0</TestTargetFrameworks>
     <!-- <EnableCoverageSupport Condition="'$(ContinuousIntegrationBuild)' != 'true'">true</EnableCoverageSupport> -->
   </PropertyGroup>

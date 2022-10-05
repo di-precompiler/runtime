@@ -18,8 +18,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFrameworks>$(LibTargetFrameworks)</TargetFrameworks>
     <PackageIcon>package.png</PackageIcon>
+    <TargetFrameworks>$(LibraryTargetFrameworks)</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>

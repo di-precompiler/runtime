@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>$(TestsTargetFrameworks)</TargetFrameworks>
+    <TargetFrameworks>$(TestTargetFrameworks)</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\IoC.Net.*.csproj" />
+    <ProjectReference Include="..\src\IoC.Net.ServiceProvider.csproj" />
   </ItemGroup>
 
 </Project>
