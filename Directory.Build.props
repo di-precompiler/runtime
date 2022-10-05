@@ -3,35 +3,49 @@
   <!-- Import the Arcade SDK -->
   <Import Project="Sdk.props" Sdk="Microsoft.DotNet.Arcade.Sdk" />
 
-  <!-- Package Info -->
-  <Import Project="$(RepositoryEngineeringDir)Package.props" />
 
-  <!-- Platforms -->
-  <PropertyGroup>
-    <LibTargetFrameworks>netstandard2.1;net462</LibTargetFrameworks>
-    <TestsTargetFrameworks>net462</TestsTargetFrameworks>
-  </PropertyGroup>
+  <!-- Language Features -->
 
-    
-  <!-- language features -->
   <PropertyGroup>
+    <Nullable>enable</Nullable>
     <LangVersion>preview</LangVersion>
     <AnalysisLevel>preview</AnalysisLevel>
-    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <!-- Debug   -->
+
+  <!-- Test Frameworks -->
+
+  <PropertyGroup>
+    <TestTargetFrameworks>net7.0</TestTargetFrameworks>
+    <!-- <EnableCoverageSupport Condition="'$(ContinuousIntegrationBuild)' != 'true'">true</EnableCoverageSupport> -->
+  </PropertyGroup>
+
+
+  <!-- Binaries Icon -->
+
+  <PropertyGroup>
+    <ApplicationIcon>$([MSBuild]::NormalizePath('$(RepositoryEngineeringDir)', 'common', 'native', 'package.ico'))</ApplicationIcon>
+  </PropertyGroup>
+
+
+  <!-- Debug Options -->
+  
   <PropertyGroup>
 
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
 
     <!-- Disable source link when building locally. -->
-    <DisableSourceLink Condition="'$(DisableSourceLink)' == '' and
-                                  '$(ContinuousIntegrationBuild)' != 'true' and
-                                  '$(OfficialBuildId)' == ''">true</DisableSourceLink>
+    <DisableSourceLink Condition="'$(DisableSourceLink)' == 'true' or
+                                  '$(ContinuousIntegrationBuild)' != 'true'">true</DisableSourceLink>
     <ErrorReport>none</ErrorReport>
 
   </PropertyGroup>
+
+
+  <!-- Test Frameworks -->
+
+  <Import Project="$(RepositoryEngineeringDir)testing\tests.props" Condition="'$(EnableTestSupport)' == 'true'" />
 
 </Project>
